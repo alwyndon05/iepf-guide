@@ -614,14 +614,14 @@ function clearStock() {
     document.getElementById('stock-search').value = '';
 }
 
-// Open price lookup in Google Finance
+// Open price lookup on Zerodha
 function openPriceLookup(event) {
     event.preventDefault();
     if (calculatorState.stockSymbol) {
         const symbol = calculatorState.stockSymbol.replace('.NS', '');
-        window.open(`https://www.google.com/finance/quote/${symbol}:NSE`, '_blank');
+        window.open(`https://zerodha.com/markets/stocks/NSE/${symbol}/`, '_blank');
     } else {
-        window.open('https://www.google.com/finance/', '_blank');
+        window.open('https://zerodha.com/markets/stocks/', '_blank');
     }
 }
 
