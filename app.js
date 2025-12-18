@@ -107,7 +107,7 @@ const shareTypeLabels = {
 // Navigation Functions
 // ============================================
 
-function goToStep(stepNumber) {
+function goToStep(stepNumber, skipScroll = false) {
     // Update state
     state.currentStep = stepNumber;
 
@@ -123,8 +123,10 @@ function goToStep(stepNumber) {
     // Update progress bar
     updateProgress(stepNumber);
 
-    // Scroll to tool if not visible
-    scrollToTool();
+    // Scroll to tool if not visible (skip on initial load)
+    if (!skipScroll) {
+        scrollToTool();
+    }
 }
 
 function nextStep() {
@@ -910,8 +912,8 @@ function resetCalculator() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize at step 0
-    goToStep(0);
+    // Initialize at step 0 (skip scroll on initial load)
+    goToStep(0, true);
 
     // Initialize guide tabs
     initGuideTabs();
