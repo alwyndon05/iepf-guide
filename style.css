@@ -1643,6 +1643,388 @@ body {
 }
 
 /* ============================================
+   Trust Section
+   ============================================ */
+.trust-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.trust-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.trust-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.trust-header p {
+    font-size: 16px;
+    color: var(--gray-500);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.trust-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    transition: all var(--transition-slow);
+    border: 1px solid var(--gray-100);
+}
+
+.trust-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gray-200);
+}
+
+.trust-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.trust-icon.green {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.trust-icon.purple {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.trust-icon.orange {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.trust-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.trust-card p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--success-light);
+    color: var(--success);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+}
+
+.trust-badge svg {
+    flex-shrink: 0;
+}
+
+/* ============================================
+   How It Works Section
+   ============================================ */
+.how-it-works {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+}
+
+.steps-visual {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 48px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.step-item {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+}
+
+.step-item:not(.final)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 0;
+    width: calc(50% - 24px);
+    height: 3px;
+    background: var(--gray-200);
+}
+
+.step-item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: calc(50% - 24px);
+    height: 3px;
+    background: var(--gray-200);
+}
+
+.step-number-visual {
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.step-item.final .step-number-visual {
+    background: var(--success);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.step-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.step-info p {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.5;
+}
+
+.step-arrow {
+    display: none;
+}
+
+.steps-cta {
+    text-align: center;
+}
+
+/* ============================================
+   Help Section
+   ============================================ */
+.help-section {
+    padding: 100px 0;
+    background: var(--gray-50);
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.help-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+
+.help-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.help-content > p {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.help-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.help-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.help-list li:last-child {
+    border-bottom: none;
+}
+
+.help-list svg {
+    flex-shrink: 0;
+    color: var(--success);
+    margin-top: 2px;
+}
+
+.help-list span {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+.help-list a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.help-list a:hover {
+    color: var(--primary-dark);
+}
+
+.help-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tip-card {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.tip-card.warning {
+    border-left: 4px solid var(--warning);
+}
+
+.tip-card.success {
+    border-left: 4px solid var(--success);
+}
+
+.tip-icon-wrap {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tip-card.warning .tip-icon-wrap {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.tip-card.success .tip-icon-wrap {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.tip-text strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.tip-text p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* RTA Info in Portals */
+.rta-info {
+    max-width: 700px;
+    margin: 40px auto 0;
+    text-align: center;
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
+
+.rta-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.rta-info > p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+}
+
+.rta-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.rta-item {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 100px;
+}
+
+/* ============================================
    Portals
    ============================================ */
 .portals {
@@ -2440,6 +2822,10 @@ body {
         margin: 0 auto;
     }
 
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .guide-grid {
         grid-template-columns: 1fr;
     }
@@ -2449,6 +2835,34 @@ body {
     .portal-cards {
         grid-template-columns: 1fr;
     }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .steps-visual {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .step-item {
+        flex-direction: row;
+        text-align: left;
+        padding: 16px 0;
+        min-width: auto;
+    }
+
+    .step-item::before,
+    .step-item::after {
+        display: none;
+    }
+
+    .step-number-visual {
+        margin-bottom: 0;
+        margin-right: 16px;
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 640px) {
@@ -2457,11 +2871,54 @@ body {
     }
 
     .nav-links {
-        gap: 16px;
+        gap: 12px;
     }
 
     .nav-links a:not(.nav-cta) {
         display: none;
+    }
+
+    .trust-section {
+        padding: 60px 0;
+    }
+
+    .trust-header h2 {
+        font-size: 28px;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .trust-badges {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .trust-badge {
+        justify-content: center;
+    }
+
+    .how-it-works {
+        padding: 60px 0;
+    }
+
+    .help-section {
+        padding: 60px 0;
+    }
+
+    .help-content h2 {
+        font-size: 26px;
+    }
+
+    .tip-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tip-icon-wrap {
+        margin: 0 auto;
     }
 
     .hero {
